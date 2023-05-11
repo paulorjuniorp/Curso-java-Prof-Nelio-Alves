@@ -1,9 +1,13 @@
 package org.example.exercicio10enum;
 
+import org.example.exercicio10enum.entities.ContratoHora;
 import org.example.exercicio10enum.entities.Departamento;
 import org.example.exercicio10enum.entities.Trabalhador;
 import org.example.exercicio10enum.enums.TrabalhadorNivel;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 /**
@@ -28,8 +32,9 @@ import java.util.Scanner;
  *
  * */
 public class Exercicio1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         Scanner scanner = new Scanner(System.in);
+        SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
         Departamento departamento = new Departamento();
 
 
@@ -53,6 +58,13 @@ public class Exercicio1 {
         for (int i = 1; i <= qtdContratos; i++){
             System.out.println("Digite os dados do contrato #"+i);
             System.out.println("Data (DD/MM/YYYY): ");
+            Date date = formatoData.parse(scanner.next());
+            System.out.print("Valor por hora: ");
+            double valorHora = scanner.nextDouble();
+            System.out.println("Duração (hora): ");
+            int hora = scanner.nextInt();
+
+            trabalhador.addContract(new ContratoHora(date,valorHora,hora));
         }
 
     }
