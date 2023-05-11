@@ -1,5 +1,11 @@
 package org.example.exercicio10enum;
 
+import org.example.exercicio10enum.entities.Departamento;
+import org.example.exercicio10enum.entities.Trabalhador;
+import org.example.exercicio10enum.enums.TrabalhadorNivel;
+
+import java.util.Scanner;
+
 /**
  * Ler os dados de um trabalhador com N contratos (N fornecido pelo usuário). Depois, solicitar do usuário um mês e mostrar
  * qual foi o salário do funcionário nesse mês, conforme exemplo
@@ -23,6 +29,31 @@ package org.example.exercicio10enum;
  * */
 public class Exercicio1 {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Departamento departamento = new Departamento();
+
+
+        System.out.print("Digite o nome do departamento: ");
+        String nomeDepartamento = scanner.nextLine();
+        departamento.setNome(nomeDepartamento);
+
+        System.out.println("Digite os dados do funcionário: ");
+        System.out.print("Nome: ");
+        String nome = scanner.nextLine();
+        System.out.print("Nível: ");
+        String nivel = scanner.nextLine();
+        System.out.println("Salário base: ");
+        double salarioBase = scanner.nextDouble();
+        scanner.nextLine();
+
+        Trabalhador trabalhador = new Trabalhador(nome, TrabalhadorNivel.valueOf(nivel),salarioBase,departamento);
+
+        System.out.print("Quantos contratos tem o trabalhador " + trabalhador.getNome()+"? ");
+        double qtdContratos = scanner.nextInt();
+        for (int i = 1; i <= qtdContratos; i++){
+            System.out.println("Digite os dados do contrato #"+i);
+            System.out.println("Data (DD/MM/YYYY): ");
+        }
 
     }
 }

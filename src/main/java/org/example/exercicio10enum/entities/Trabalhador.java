@@ -2,6 +2,8 @@ package org.example.exercicio10enum.entities;
 
 import org.example.exercicio10enum.enums.TrabalhadorNivel;
 
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 public class Trabalhador {
@@ -9,17 +11,16 @@ public class Trabalhador {
     private TrabalhadorNivel trabalhadorNivel;
     private Double salarioBase;
     private Departamento departamento;
-    private List<ContratoHora> contratoHoras;
+    private List<ContratoHora> contratoHoras = new ArrayList<>();
 
     public Trabalhador() {
     }
 
-    public Trabalhador(String nome, TrabalhadorNivel trabalhadorNivel, Double salarioBase, Departamento departamento, List<ContratoHora> contratoHoras) {
+    public Trabalhador(String nome, TrabalhadorNivel trabalhadorNivel, Double salarioBase, Departamento departamento) {
         this.nome = nome;
         this.trabalhadorNivel = trabalhadorNivel;
         this.salarioBase = salarioBase;
         this.departamento = departamento;
-        this.contratoHoras = contratoHoras;
     }
 
     public String getNome() {
@@ -58,8 +59,25 @@ public class Trabalhador {
         return contratoHoras;
     }
 
-    public void setContratoHoras(List<ContratoHora> contratoHoras) {
-        this.contratoHoras = contratoHoras;
+    public void addContract(ContratoHora contratoHora){
+        contratoHoras.add(contratoHora);
+    }
+
+    public void removeContract(ContratoHora contratoHora){
+        contratoHoras.remove(contratoHora);
+    }
+
+    public double salario(Integer ano, Integer mes){
+        Double soma = salarioBase;
+        Calendar calendario = Calendar.getInstance();
+        for (ContratoHora contratoHora : contratoHoras) {
+            calendario.setTime(contratoHora.getDate());
+            if ((calendario.get(Calendar.MONTH) + 1) == mes && calendario.get(Calendar.YEAR) == ano){
+                soma += contratoHora.valorTotal();
+            }
+        }
+
+        return soma;
     }
 
     @Override
