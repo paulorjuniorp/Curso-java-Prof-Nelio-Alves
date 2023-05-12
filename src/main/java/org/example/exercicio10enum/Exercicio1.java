@@ -7,6 +7,7 @@ import org.example.exercicio10enum.enums.TrabalhadorNivel;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -35,9 +36,9 @@ public class Exercicio1 {
     public static void main(String[] args) throws ParseException {
         Scanner scanner = new Scanner(System.in);
         SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat formatoDataSalario = new SimpleDateFormat("MM/yyyy");
+
         Departamento departamento = new Departamento();
-
-
         System.out.print("Digite o nome do departamento: ");
         String nomeDepartamento = scanner.nextLine();
         departamento.setNome(nomeDepartamento);
@@ -47,25 +48,33 @@ public class Exercicio1 {
         String nome = scanner.nextLine();
         System.out.print("Nível: ");
         String nivel = scanner.nextLine();
-        System.out.println("Salário base: ");
+        System.out.print("Salário base: ");
         double salarioBase = scanner.nextDouble();
         scanner.nextLine();
-
         Trabalhador trabalhador = new Trabalhador(nome, TrabalhadorNivel.valueOf(nivel),salarioBase,departamento);
 
         System.out.print("Quantos contratos tem o trabalhador " + trabalhador.getNome()+"? ");
         double qtdContratos = scanner.nextInt();
         for (int i = 1; i <= qtdContratos; i++){
             System.out.println("Digite os dados do contrato #"+i);
-            System.out.println("Data (DD/MM/YYYY): ");
+            System.out.print("Data (DD/MM/YYYY): ");
             Date date = formatoData.parse(scanner.next());
             System.out.print("Valor por hora: ");
             double valorHora = scanner.nextDouble();
-            System.out.println("Duração (hora): ");
+            System.out.print("Duração (hora): ");
             int hora = scanner.nextInt();
 
             trabalhador.addContract(new ContratoHora(date,valorHora,hora));
         }
 
+        System.out.print("Digite o mês e ano para calcular o salário (MM/YYYY): ");
+        Date dataSalario = formatoDataSalario.parse(scanner.next());
+        Calendar calendario = Calendar.getInstance();
+        calendario.setTime(dataSalario);
+        double salario = trabalhador.salario(calendario.get(Calendar.YEAR), calendario.get(Calendar.MONTH) + 1);
+
+        System.out.println("Nome: " + trabalhador.getNome());
+        System.out.println("Departamento: " + departamento.getNome());
+        System.out.println("Salário por " + dataSalario +": " + salario);
     }
 }
