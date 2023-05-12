@@ -73,8 +73,9 @@ public class Exercicio1 {
         calendario.setTime(dataSalario);
         double salario = trabalhador.salario(calendario.get(Calendar.YEAR), calendario.get(Calendar.MONTH) + 1);
 
+        System.out.println();
         System.out.println("Nome: " + trabalhador.getNome());
         System.out.println("Departamento: " + departamento.getNome());
-        System.out.println("Salário por " + dataSalario +": " + salario);
+        System.out.printf("Salário por %d/%d: %.2f",calendario.get(Calendar.MONTH) + 1,calendario.get(Calendar.YEAR),salario);
     }
 }
