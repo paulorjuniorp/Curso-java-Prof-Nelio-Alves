@@ -1,7 +1,7 @@
-package org.example.exercicio10enum;
+package org.example.exercicio10enumcomposicao;
 
-import org.example.exercicio10enum.entities.Order;
-import org.example.exercicio10enum.enums.OrderStatus;
+import org.example.exercicio10enumcomposicao.entities.Order;
+import org.example.exercicio10enumcomposicao.enums.OrderStatus;
 
 import java.util.Date;
 

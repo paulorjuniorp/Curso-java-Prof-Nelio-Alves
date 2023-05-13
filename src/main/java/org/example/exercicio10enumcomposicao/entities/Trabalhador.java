@@ -1,6 +1,6 @@
-package org.example.exercicio10enum.entities;
+package org.example.exercicio10enumcomposicao.entities;
 
-import org.example.exercicio10enum.enums.TrabalhadorNivel;
+import org.example.exercicio10enumcomposicao.enums.TrabalhadorNivel;
 
 import java.util.ArrayList;
 import java.util.Calendar;

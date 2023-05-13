@@ -1,4 +1,4 @@
-package org.example.exercicio10enum.entities;
+package org.example.exercicio10enumcomposicao.entities;
 
 public class Departamento {
     private String nome;

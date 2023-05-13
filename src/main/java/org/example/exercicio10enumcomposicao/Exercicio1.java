@@ -1,9 +1,9 @@
-package org.example.exercicio10enum;
+package org.example.exercicio10enumcomposicao;
 
-import org.example.exercicio10enum.entities.ContratoHora;
-import org.example.exercicio10enum.entities.Departamento;
-import org.example.exercicio10enum.entities.Trabalhador;
-import org.example.exercicio10enum.enums.TrabalhadorNivel;
+import org.example.exercicio10enumcomposicao.entities.ContratoHora;
+import org.example.exercicio10enumcomposicao.entities.Departamento;
+import org.example.exercicio10enumcomposicao.entities.Trabalhador;
+import org.example.exercicio10enumcomposicao.enums.TrabalhadorNivel;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

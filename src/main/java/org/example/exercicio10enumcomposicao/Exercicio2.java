@@ -1,7 +1,7 @@
-package org.example.exercicio10enum.enums;
+package org.example.exercicio10enumcomposicao;
 
-import org.example.exercicio10enum.entities.ComentarioPublicacao;
-import org.example.exercicio10enum.entities.Publicacao;
+import org.example.exercicio10enumcomposicao.entities.ComentarioPublicacao;
+import org.example.exercicio10enumcomposicao.entities.Publicacao;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
