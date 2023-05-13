@@ -34,23 +34,11 @@ public class Exercicio2 {
         publicacao2.addComentario(primeiroComentarioPublicacao2);
         publicacao2.addComentario(segundoComentarioPublicacao2);
 
-        System.out.println(publicacao1.getTitulo());
-        System.out.printf("%d Likes - %s%n", publicacao1.getLikes(), publicacao1.getMomento());
-        System.out.println(publicacao1.getConteudo());
-        System.out.println("Comentários: ");
-        for (ComentarioPublicacao comentario : publicacao1.getComentarios()) {
-            System.out.println(comentario);
-        }
+        System.out.println(publicacao1);
 
         System.out.println("\n");
 
-        System.out.println(publicacao2.getTitulo());
-        System.out.printf("%d Likes - %s%n", publicacao2.getLikes(), publicacao2.getMomento());
-        System.out.println(publicacao2.getConteudo());
-        System.out.println("Comentários: ");
-        for (ComentarioPublicacao comentario : publicacao2.getComentarios()) {
-            System.out.println(comentario);
-        }
+        System.out.println(publicacao2);
 
     }
 }

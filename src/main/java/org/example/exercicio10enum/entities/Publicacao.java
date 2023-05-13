@@ -1,10 +1,14 @@
 package org.example.exercicio10enum.entities;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class Publicacao {
+
+
+    private static SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     private Date momento;
     private String titulo;
     private String conteudo;
@@ -63,5 +67,21 @@ public class Publicacao {
 
     public void removeComentario(ComentarioPublicacao comentarioPublicacao){
         comentarios.remove(comentarioPublicacao);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(titulo + "\n");
+        sb.append(likes);
+        sb.append(" Likes - ");
+        sb.append(formatoData.format(momento) + "\n");
+        sb.append(conteudo + "\n");
+        sb.append("Comentários: " + "\n");
+        for (ComentarioPublicacao comentario : comentarios) {
+            sb.append(comentario + "\n");
+        }
+
+        return sb.toString();
     }
 }
