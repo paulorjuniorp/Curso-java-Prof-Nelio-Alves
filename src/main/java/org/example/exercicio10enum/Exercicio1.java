@@ -77,5 +77,7 @@ public class Exercicio1 {
         System.out.println("Nome: " + trabalhador.getNome());
         System.out.println("Departamento: " + departamento.getNome());
         System.out.printf("Salário por %d/%d: %.2f",calendario.get(Calendar.MONTH) + 1,calendario.get(Calendar.YEAR),salario);
+
+        scanner.close();
     }
 }

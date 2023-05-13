@@ -1,5 +1,6 @@
 package org.example.exercicio10enum.entities;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -8,7 +9,7 @@ public class Publicacao {
     private String titulo;
     private String conteudo;
     private Integer likes;
-    List<ComentarioPublicacao> comentarios;
+    List<ComentarioPublicacao> comentarios = new ArrayList<>();
 
     public Publicacao() {
     }
