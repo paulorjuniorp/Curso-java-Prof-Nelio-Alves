@@ -56,14 +56,15 @@ public class Exercicio3 {
         System.out.print("Email: ");
         String email = scanner.nextLine();
         System.out.print("Data de nascimento (DD/MM/YYYY): ");
-        Date dataNascimento = formatoData.parse(scanner.next());
+        Date dataNascimento = formatoData.parse(scanner.nextLine());
 
         Cliente cliente = new Cliente(nome,email,dataNascimento);
         pedido.setCliente(cliente);
 
         System.out.println("Digite os dados do pedido: ");
         System.out.print("Status: ");
-        StatusPedido statusPedido = StatusPedido.valueOf(scanner.nextLine());
+        String statusPedidoString = scanner.nextLine();
+        StatusPedido statusPedido = StatusPedido.valueOf(statusPedidoString);
         pedido.setStatusPedido(statusPedido);
 
         System.out.print("Quanto itens para este pedido? ");
@@ -84,6 +85,6 @@ public class Exercicio3 {
         }
 
         System.out.println("Resumo");
-
+        System.out.println(pedido);
     }
 }
