@@ -39,6 +39,6 @@ public class ItemPedido {
     }
 
     public double subTotal(){
-        return produto.getPreco() * quantidade;
+        return preco * quantidade;
     }
 }
