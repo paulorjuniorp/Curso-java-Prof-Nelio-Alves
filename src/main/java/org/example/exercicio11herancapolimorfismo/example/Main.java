@@ -1,8 +1,8 @@
 package org.example.exercicio11herancapolimorfismo.example;
 
-import org.example.exercicio11herancapolimorfismo.example.entitie.Account;
-import org.example.exercicio11herancapolimorfismo.example.entitie.BusinessAccount;
-import org.example.exercicio11herancapolimorfismo.example.entitie.SavingsAccount;
+import org.example.exercicio11herancapolimorfismo.example.entities.Account;
+import org.example.exercicio11herancapolimorfismo.example.entities.BusinessAccount;
+import org.example.exercicio11herancapolimorfismo.example.entities.SavingsAccount;
 
 public class Main {
     public static void main(String[] args) {

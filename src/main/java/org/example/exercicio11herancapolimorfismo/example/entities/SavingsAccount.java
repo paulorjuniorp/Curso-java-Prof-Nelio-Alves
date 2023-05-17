@@ -1,4 +1,4 @@
-package org.example.exercicio11herancapolimorfismo.example.entitie;
+package org.example.exercicio11herancapolimorfismo.example.entities;
 
 public class SavingsAccount extends Account{
     private Double interestRate;
