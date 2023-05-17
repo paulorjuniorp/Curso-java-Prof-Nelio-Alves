@@ -23,14 +23,14 @@ public class Exemplo1 {
         Scanner scanner = new Scanner(System.in);
         List<Employee> employees = new ArrayList<>();
 
-        System.out.println("Digite o número de funcionários");
+        System.out.print("Digite o número de funcionários: ");
         int entrada = scanner.nextInt();
         for (int i = 1; i <= entrada;i++){
             Employee employee;
             System.out.println("Dados do funcionário #" + i);
-            System.out.print("Terceirizado (s/n)?");
+            System.out.print("Terceirizado (s/n)? ");
             scanner.nextLine();
-            char isTerceirizado = scanner.next().charAt(0);
+            char isTerceirizado = scanner.nextLine().charAt(0);
             System.out.print("Name: ");
             String nome = scanner.nextLine();
             System.out.print("Hours: ");
@@ -47,5 +47,11 @@ public class Exemplo1 {
                 employees.add(employee);
             }
         }
+
+        System.out.println("Payments: ");
+        for (Employee employee : employees) {
+            System.out.printf("%s - R$ %.2f%n", employee.getName(), employee.payment());
+        }
+
     }
 }
