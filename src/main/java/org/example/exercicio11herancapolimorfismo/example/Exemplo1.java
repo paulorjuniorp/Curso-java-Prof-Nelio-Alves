@@ -48,10 +48,12 @@ public class Exemplo1 {
             }
         }
 
+        System.out.println("\n");
         System.out.println("Payments: ");
         for (Employee employee : employees) {
             System.out.printf("%s - R$ %.2f%n", employee.getName(), employee.payment());
         }
 
+        scanner.close();
     }
 }
