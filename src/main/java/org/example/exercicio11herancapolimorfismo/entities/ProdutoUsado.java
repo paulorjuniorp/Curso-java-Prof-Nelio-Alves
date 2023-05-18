@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class ProdutoUsado extends Produto {
 
-    private static SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+    private static SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
     private Date dataFabricacao;
 
     public ProdutoUsado() {
@@ -31,7 +31,7 @@ public class ProdutoUsado extends Produto {
         sb.append(getNome()
                 + " (usado) R$ "
                 + getPreco()
-                + "(Data de fabricação: "
+                + " (Data de fabricação: "
                 + formatoData.format(dataFabricacao)
                 + ")");
 
