@@ -22,7 +22,9 @@ public class ProdutoImportado extends Produto {
 
     @Override
     public String tagPreco() {
-        return super.tagPreco();
+        StringBuilder sb = new StringBuilder();
+        sb.append(getNome() + " R$ " + getPreco() + " (Taxas alfandegárias: R$ " + taxaAlfandega + ")");
+        return sb.toString();
     }
 
     public double precoTotal(){

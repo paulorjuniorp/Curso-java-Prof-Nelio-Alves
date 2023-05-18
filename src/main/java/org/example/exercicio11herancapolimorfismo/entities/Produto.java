@@ -29,6 +29,6 @@ public class Produto {
     }
 
     public String tagPreco(){
-        return null;
+        return new StringBuilder().append(getNome() + " R$ "+ getPreco()).toString();
     }
 }
