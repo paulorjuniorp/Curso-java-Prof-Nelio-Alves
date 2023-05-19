@@ -1,12 +1,16 @@
 package org.example.exercicio11herancapolimorfismo.example.entities;
 
-public class Circle extends Shape{
+import org.example.exercicio11herancapolimorfismo.example.enums.Color;
+
+public class Circle extends Shape {
     private Double radius;
 
     public Circle() {
+        super();
     }
 
-    public Circle(Double radius) {
+    public Circle(Color color, Double radius) {
+        super(color);
         this.radius = radius;
     }
 
@@ -17,17 +21,13 @@ public class Circle extends Shape{
     public void setRadius(Double radius) {
         this.radius = radius;
     }
-
-    private static final Double PI = 3.14;
     @Override
     public double area() {
-        return 2 * PI * radius;
+        return Math.PI * radius * radius;
     }
 
     @Override
     public String toString() {
-        return "Circle{" +
-                "radius=" + radius +
-                '}';
+        return String.format("%.2f",area()) + " - " + getColor();
     }
 }

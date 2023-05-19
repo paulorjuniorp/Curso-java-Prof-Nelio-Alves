@@ -1,13 +1,17 @@
 package org.example.exercicio11herancapolimorfismo.example.entities;
 
+import org.example.exercicio11herancapolimorfismo.example.enums.Color;
+
 public class Rectangle extends Shape {
     private Double width;
     private Double height;
 
     public Rectangle() {
+        super();
     }
 
-    public Rectangle(Double width, Double height) {
+    public Rectangle(Color color, Double width, Double height) {
+        super(color);
         this.width = width;
         this.height = height;
     }
@@ -35,9 +39,6 @@ public class Rectangle extends Shape {
 
     @Override
     public String toString() {
-        return "Rectangle{" +
-                "width=" + width +
-                ", height=" + height +
-                '}';
+        return area() + " - " + getColor();
     }
 }

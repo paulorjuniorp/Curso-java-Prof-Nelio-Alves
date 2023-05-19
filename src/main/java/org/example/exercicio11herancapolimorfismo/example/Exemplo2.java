@@ -3,22 +3,60 @@ package org.example.exercicio11herancapolimorfismo.example;
 import org.example.exercicio11herancapolimorfismo.example.entities.Circle;
 import org.example.exercicio11herancapolimorfismo.example.entities.Rectangle;
 import org.example.exercicio11herancapolimorfismo.example.entities.Shape;
+import org.example.exercicio11herancapolimorfismo.example.enums.Color;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
+/**
+ * Fazer um programa para ler os dados de N figuras (N fornecido pelo usuário), e depois mostrar as áreas
+ * destas figuras na mesma ordem em que foram digitadas.
+ * */
 public class Exemplo2 {
     public static void main(String[] args) {
-        Shape rectangle = new Rectangle(6.4, 2.0);
-        Shape circle = new Circle(8.5);
+        Scanner scanner = new Scanner(System.in);
         List<Shape> formas = new ArrayList<>();
 
-        formas.add(rectangle);
-        formas.add(circle);
 
-        for (Shape forma : formas) {
-            System.out.println(forma.area());
+        System.out.print("Enter the number of shapes: ");
+        int entrada = scanner.nextInt();
+
+        for (int i = 1; i <= entrada; i++){
+            System.out.printf("Shape #%d data: %n", i);
+            System.out.print("Rectangle or Circle (r/c)? ");
+            scanner.nextLine();
+            char shapeType = scanner.nextLine().charAt(0);
+            switch (shapeType){
+                case 'r':
+                    System.out.print("Color (BLACK/ BLUE/ RED): ");
+                    Color colorRectangle = Color.valueOf(scanner.nextLine());
+                    System.out.print("Width: ");
+                    double width = scanner.nextDouble();
+                    System.out.print("Heigth: ");
+                    double height = scanner.nextDouble();
+                    Shape rectangle = new Rectangle(colorRectangle, width, height);
+                    formas.add(rectangle);
+                    break;
+                case 'c':
+                    System.out.print("Color (BLACK/ BLUE/ RED): ");
+                    Color colorCircle = Color.valueOf(scanner.nextLine());
+                    System.out.print("Radius: ");
+                    double radius = scanner.nextDouble();
+                    Shape circle = new Circle(colorCircle,radius);
+                    formas.add(circle);
+                    break;
+                default:
+                    System.out.println("Invalid option!");
+                    break;
+            }
         }
 
+        System.out.println("\n");
+        System.out.println("Shape Areas: ");
+        for (Shape forma : formas) {
+            System.out.println(forma);
+        }
+        scanner.close();
     }
 }
