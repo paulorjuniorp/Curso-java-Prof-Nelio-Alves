@@ -27,23 +27,21 @@ public class Exemplo2 {
             System.out.print("Rectangle or Circle (r/c)? ");
             scanner.nextLine();
             char shapeType = scanner.nextLine().charAt(0);
+            System.out.print("Color (BLACK/ BLUE/ RED): ");
+            Color color = Color.valueOf(scanner.nextLine());
             switch (shapeType){
                 case 'r':
-                    System.out.print("Color (BLACK/ BLUE/ RED): ");
-                    Color colorRectangle = Color.valueOf(scanner.nextLine());
                     System.out.print("Width: ");
                     double width = scanner.nextDouble();
                     System.out.print("Heigth: ");
                     double height = scanner.nextDouble();
-                    Shape rectangle = new Rectangle(colorRectangle, width, height);
+                    Shape rectangle = new Rectangle(color, width, height);
                     formas.add(rectangle);
                     break;
                 case 'c':
-                    System.out.print("Color (BLACK/ BLUE/ RED): ");
-                    Color colorCircle = Color.valueOf(scanner.nextLine());
                     System.out.print("Radius: ");
                     double radius = scanner.nextDouble();
-                    Shape circle = new Circle(colorCircle,radius);
+                    Shape circle = new Circle(color,radius);
                     formas.add(circle);
                     break;
                 default:
