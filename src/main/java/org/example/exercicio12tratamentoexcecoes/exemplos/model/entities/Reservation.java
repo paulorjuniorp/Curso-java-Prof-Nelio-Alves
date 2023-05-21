@@ -1,8 +1,12 @@
 package org.example.exercicio12tratamentoexcecoes.exemplos.model.entities;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class Reservation {
+
+    private static SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
     private Integer roomNumber;
     private Date checkin;
     private Date checkout;
@@ -28,23 +32,30 @@ public class Reservation {
         return checkin;
     }
 
-    public void setCheckin(Date checkin) {
-        this.checkin = checkin;
-    }
-
     public Date getCheckout() {
         return checkout;
     }
 
-    public void setCheckout(Date checkout) {
-        this.checkout = checkout;
-    }
-
-    public Integer duration(){
-        return null;
+    public long duration(){
+        long diff = checkout.getTime() - checkin.getTime();
+        return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
     }
 
     public void updateDates(Date checkin, Date checkout){
+        this.checkin = checkin;
+        this.checkout = checkout;
+    }
 
+    @Override
+    public String toString() {
+        return "Room " +
+                roomNumber +
+                ", check-in: " +
+                formatoData.format(checkin) +
+                ", check-out: " +
+                formatoData.format(checkout) +
+                ", duration: " +
+                duration() +
+                " nights";
     }
 }
