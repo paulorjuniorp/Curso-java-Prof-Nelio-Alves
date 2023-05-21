@@ -1,4 +1,4 @@
-package org.example.exercicio11herancapolimorfismo.example;
+package org.example.exercicio12tratamentoexcecoes.exemplos.application;
 
 import org.example.exercicio11herancapolimorfismo.example.entities.Employee;
 import org.example.exercicio11herancapolimorfismo.example.entities.OutsourcedEmployee;

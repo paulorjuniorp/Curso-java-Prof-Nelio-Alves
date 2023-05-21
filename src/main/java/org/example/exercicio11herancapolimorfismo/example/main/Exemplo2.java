@@ -1,4 +1,4 @@
-package org.example.exercicio11herancapolimorfismo.example;
+package org.example.exercicio11herancapolimorfismo.example.main;
 
 import org.example.exercicio11herancapolimorfismo.example.entities.Circle;
 import org.example.exercicio11herancapolimorfismo.example.entities.Rectangle;
