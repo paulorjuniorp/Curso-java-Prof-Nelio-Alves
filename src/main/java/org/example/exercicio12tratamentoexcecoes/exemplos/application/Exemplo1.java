@@ -16,7 +16,7 @@ import java.util.Scanner;
  *      -A data de saída deve ser maior que a data de entrada
  * */
 
-//Exemplo de uma implementação muito ruim
+//Exemplo de uma implementação muito ruim: erro de delegação pois a lógica de validação está na classe main
 public class Exemplo1 {
     public static void main(String[] args) throws ParseException {
         Scanner scanner = new Scanner(System.in);
@@ -38,7 +38,7 @@ public class Exemplo1 {
             System.out.println("Enter data to update the reservation:");
             System.out.print("Check-in date (dd/MM/yyyy): ");
             checkIn = formatoData.parse(scanner.next());
-            System.out.println("Check-out date (dd/MM/yyyy): ");
+            System.out.print("Check-out date (dd/MM/yyyy): ");
             checkOut = formatoData.parse(scanner.next());
 
             Date now = new Date();
