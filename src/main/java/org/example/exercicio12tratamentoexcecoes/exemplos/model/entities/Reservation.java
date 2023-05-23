@@ -1,5 +1,7 @@
 package org.example.exercicio12tratamentoexcecoes.exemplos.model.entities;
 
+import org.example.exercicio12tratamentoexcecoes.exemplos.model.exception.DomainExeption;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -41,7 +43,7 @@ public class Reservation {
         return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
     }
 
-    public String updateDates(Date checkin, Date checkout){
+    public String updateDatesExemplo2(Date checkin, Date checkout){
         Date now = new Date();
         if (checkin.before(now) || checkout.before(now)){
             return  "Error in reservation: Reservation dates for update must be future dates";
@@ -54,6 +56,20 @@ public class Reservation {
         this.checkout = checkout;
 
         return null;
+    }
+
+    public void updateDates(Date checkin, Date checkout) throws DomainExeption {
+        Date now = new Date();
+        if (checkin.before(now) || checkout.before(now)){
+            throw new DomainExeption("Error in reservation: Reservation dates for update must be future dates");
+        }
+
+        if (!checkout.after(checkin)){
+            throw new DomainExeption("Error in reservation: Check-out date must be after check-in date");
+        }
+        this.checkin = checkin;
+        this.checkout = checkout;
+
     }
 
     @Override
