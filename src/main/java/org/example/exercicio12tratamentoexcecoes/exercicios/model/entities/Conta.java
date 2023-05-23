@@ -48,11 +48,11 @@ public class Conta {
 
     public void saque(double saque) throws SaqueExeption {
         if (saldo <= 0){
-            throw new SaqueExeption("Saldo insuficiente");
+            throw new SaqueExeption("Saldo insuficiente.");
         }
 
         if (saque > limiteSaque){
-            throw new SaqueExeption("O valor de saque excede o valor limite de saque");
+            throw new SaqueExeption("O valor de saque excede o valor limite de saque.");
         }
 
         saldo -= saque;
