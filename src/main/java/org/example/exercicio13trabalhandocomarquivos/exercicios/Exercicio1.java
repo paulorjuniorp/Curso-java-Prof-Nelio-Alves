@@ -1,6 +1,12 @@
 package org.example.exercicio13trabalhandocomarquivos.exercicios;
 
+import org.example.exercicio13trabalhandocomarquivos.exercicios.entities.Produto;
+
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
 
 /**
  * Fazer um programa para ler o caminho de um arquivo .csv contendo os dados de itens vendidos. Cada item
@@ -24,12 +30,20 @@ import java.io.*;
  * */
 public class Exercicio1 {
     public static void main(String[] args) {
-        String pathIn = "C:\\teste\\teste.csv";
-        String pathOut = "C:\\teste\\out";
+        Locale.setDefault(Locale.US);
+        Scanner scanner = new Scanner(System.in);
+        List<Produto> produtos = new ArrayList<>();
+        String pathIn = scanner.nextLine();
+
+        String pathOut = pathIn + "\\out";
+
         try(BufferedReader bufferedReader = new BufferedReader(new FileReader(pathIn));
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(pathOut))) {
+            File arquivoOrigem = new File(pathIn);
+
             String linha = bufferedReader.readLine();
             while (linha != null){
+
                 bufferedWriter.write(linha);
                 bufferedWriter.newLine();
 
@@ -38,5 +52,7 @@ public class Exercicio1 {
         } catch (IOException e){
             e.printStackTrace();
         }
+
+        scanner.close();
     }
 }
