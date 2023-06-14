@@ -33,26 +33,44 @@ public class Exercicio1 {
         Locale.setDefault(Locale.US);
         Scanner scanner = new Scanner(System.in);
         List<Produto> produtos = new ArrayList<>();
-        String pathIn = scanner.nextLine();
 
-        String pathOut = pathIn + "\\out";
+        System.out.println("Digite o caminho do arquivo: ");
+        String arquivoOrigemStr = scanner.nextLine();
 
-        try(BufferedReader bufferedReader = new BufferedReader(new FileReader(pathIn));
-            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(pathOut))) {
-            File arquivoOrigem = new File(pathIn);
+        File arquivoOrigem = new File(arquivoOrigemStr);
+        String pastaOrigemStr = arquivoOrigem.getParent();
 
-            String linha = bufferedReader.readLine();
-            while (linha != null){
+        boolean sucesso = new File(pastaOrigemStr+"\\out").mkdir();
 
-                bufferedWriter.write(linha);
-                bufferedWriter.newLine();
+        String arquivoDestinoStr = pastaOrigemStr + "\\out\\summary.csv";
 
-                linha = bufferedReader.readLine();
+        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(arquivoOrigemStr))) {
+            String produtoLido = bufferedReader.readLine();
+            while (produtoLido != null){
+                String[] camposArquivo = produtoLido.split(",");
+                String nome = camposArquivo[0];
+                Double preco = Double.parseDouble(camposArquivo[1]);
+                Integer quantidade = Integer.parseInt(camposArquivo[2]);
+
+                produtos.add(new Produto(nome, preco, quantidade));
+
+                produtoLido = bufferedReader.readLine();
             }
+
+            try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(arquivoDestinoStr))) {
+                for (Produto produto : produtos) {
+                    bufferedWriter.write(produto.getNome() + ", " + String.format("%.2f",produto.total()));
+                    bufferedWriter.newLine();
+                }
+
+                System.out.println(arquivoDestinoStr + " criado com sucesso");
+            } catch (IOException e){
+                e.printStackTrace();
+            }
+
         } catch (IOException e){
             e.printStackTrace();
         }
-
         scanner.close();
     }
 }
