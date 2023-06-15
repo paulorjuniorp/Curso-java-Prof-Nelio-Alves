@@ -1,5 +1,8 @@
 package org.example.exercicio14interfaces.exemplos.application;
 
+import org.example.exercicio14interfaces.exemplos.model.entidades.Fatura;
+import org.example.exercicio14interfaces.exemplos.model.entidades.Veiculo;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -56,6 +59,8 @@ public class Exemplo1 {
         double precoHora = scanner.nextDouble();
         System.out.print("Entre com o preço por dia: ");
         double precoDia = scanner.nextDouble();
+        Veiculo veiculo = new Veiculo(modelo);
+
         System.out.println("FATURA: ");
 
     }
