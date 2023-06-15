@@ -1,4 +1,11 @@
-package org.example.exercicio14interfaces.exemplos;
+package org.example.exercicio14interfaces.exemplos.application;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+import java.util.Scanner;
 
 /**
  * Uma locadora brasileira de carros cobra um valor por hora para locações de até 12 horas. Porém, se a
@@ -33,4 +40,23 @@ package org.example.exercicio14interfaces.exemplos;
  *
  * */
 public class Exemplo1 {
+    public static void main(String[] args){
+        Locale.setDefault(Locale.US);
+        Scanner scanner = new Scanner(System.in);
+        DateTimeFormatter formatoDataHora = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+
+        System.out.println("Entre com os dados do aluguel");
+        System.out.print("Modelo do carro: ");
+        String modelo = scanner.nextLine();
+        System.out.print("Retirada (dd/MM/yyyy hh:mm): ");
+        LocalDateTime inicio = LocalDateTime.parse(scanner.nextLine(), formatoDataHora);
+        System.out.print("Retorno (dd/MM/yyyy hh:mm): ");
+        LocalDateTime fim = LocalDateTime.parse(scanner.nextLine(), formatoDataHora);
+        System.out.print("Entre com o preço por hora: ");
+        double precoHora = scanner.nextDouble();
+        System.out.print("Entre com o preço por dia: ");
+        double precoDia = scanner.nextDouble();
+        System.out.println("FATURA: ");
+
+    }
 }
