@@ -64,9 +64,9 @@ public class Exemplo1 {
         double precoDia = scanner.nextDouble();
         AluguelCarro aluguelCarro = new AluguelCarro(inicio, fim, new Veiculo(modelo));
 
-        System.out.println("Entre com o preço por hora:");
+        System.out.print("Entre com o preço por hora: ");
         double precoPorHora = scanner.nextDouble();
-        System.out.println("Entre com o preço por dia:");
+        System.out.print("Entre com o preço por dia: ");
         double precoPorDia = scanner.nextDouble();
 
         RentalService rentalService = new RentalService(precoPorHora,precoPorDia, new BrazilTaxService());
