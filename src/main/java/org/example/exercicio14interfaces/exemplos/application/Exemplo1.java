@@ -3,6 +3,8 @@ package org.example.exercicio14interfaces.exemplos.application;
 import org.example.exercicio14interfaces.exemplos.model.entidades.AluguelCarro;
 import org.example.exercicio14interfaces.exemplos.model.entidades.Fatura;
 import org.example.exercicio14interfaces.exemplos.model.entidades.Veiculo;
+import org.example.exercicio14interfaces.exemplos.model.services.BrazilTaxService;
+import org.example.exercicio14interfaces.exemplos.model.services.RentalService;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -61,7 +63,20 @@ public class Exemplo1 {
         System.out.print("Entre com o preço por dia: ");
         double precoDia = scanner.nextDouble();
         AluguelCarro aluguelCarro = new AluguelCarro(inicio, fim, new Veiculo(modelo));
+
+        System.out.println("Entre com o preço por hora:");
+        double precoPorHora = scanner.nextDouble();
+        System.out.println("Entre com o preço por dia:");
+        double precoPorDia = scanner.nextDouble();
+
+        RentalService rentalService = new RentalService(precoPorHora,precoPorDia, new BrazilTaxService());
+
+        rentalService.processInvoice(aluguelCarro);
+
         System.out.println("FATURA: ");
+        System.out.println("Pagamento básico: " + aluguelCarro.getFatura().getPagamentoBasico());
+        System.out.println("Imposto: " + aluguelCarro.getFatura().getImposto());
+        System.out.println("Pagamento total: " + aluguelCarro.getFatura().getPagamentoTotal());
 
     }
 }
