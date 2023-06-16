@@ -1,5 +1,6 @@
 package org.example.exercicio14interfaces.exemplos.application;
 
+import org.example.exercicio14interfaces.exemplos.model.entidades.AluguelCarro;
 import org.example.exercicio14interfaces.exemplos.model.entidades.Fatura;
 import org.example.exercicio14interfaces.exemplos.model.entidades.Veiculo;
 
@@ -59,8 +60,7 @@ public class Exemplo1 {
         double precoHora = scanner.nextDouble();
         System.out.print("Entre com o preço por dia: ");
         double precoDia = scanner.nextDouble();
-        Veiculo veiculo = new Veiculo(modelo);
-
+        AluguelCarro aluguelCarro = new AluguelCarro(inicio, fim, new Veiculo(modelo));
         System.out.println("FATURA: ");
 
     }
