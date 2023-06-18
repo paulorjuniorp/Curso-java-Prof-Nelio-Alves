@@ -22,9 +22,8 @@ public class RentalService {
         if (hours > 12){
 
         } else {
-
+            aluguelCarro.setFatura(new Fatura(pricePerHour * hours, taxService.tax(pricePerHour * hours)));
         }
-        //aluguelCarro.setFatura(new Fatura());
     }
 
 }
