@@ -18,8 +18,8 @@ public class RentalService {
 
     public void processInvoice(AluguelCarro aluguelCarro){
         Duration duration = Duration.between(aluguelCarro.getInicio(), aluguelCarro.getFim());
-        long minutes = duration.toMinutes();
-        long hours = minutes / 60;
+        double minutes = duration.toMinutes();
+        double hours = minutes / 60;
 
         double basicPayment;
         if (hours > 12){
