@@ -64,19 +64,14 @@ public class Exemplo1 {
         double precoDia = scanner.nextDouble();
         AluguelCarro aluguelCarro = new AluguelCarro(inicio, fim, new Veiculo(modelo));
 
-        System.out.print("Entre com o preço por hora: ");
-        double precoPorHora = scanner.nextDouble();
-        System.out.print("Entre com o preço por dia: ");
-        double precoPorDia = scanner.nextDouble();
-
-        RentalService rentalService = new RentalService(precoPorHora,precoPorDia, new BrazilTaxService());
+        RentalService rentalService = new RentalService(precoHora,precoDia, new BrazilTaxService());
 
         rentalService.processInvoice(aluguelCarro);
 
         System.out.println("FATURA: ");
-        System.out.println("Pagamento básico: " + aluguelCarro.getFatura().getPagamentoBasico());
-        System.out.println("Imposto: " + aluguelCarro.getFatura().getImposto());
-        System.out.println("Pagamento total: " + aluguelCarro.getFatura().getPagamentoTotal());
+        System.out.println("Pagamento básico: " + String.format("%.2f", aluguelCarro.getFatura().getPagamentoBasico()));
+        System.out.println("Imposto: " + String.format("%.2f", aluguelCarro.getFatura().getImposto()));
+        System.out.println("Pagamento total: " + String.format("%.2f", aluguelCarro.getFatura().getPagamentoTotal()));
 
     }
 }

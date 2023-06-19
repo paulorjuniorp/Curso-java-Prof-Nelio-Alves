@@ -18,12 +18,19 @@ public class RentalService {
 
     public void processInvoice(AluguelCarro aluguelCarro){
         Duration duration = Duration.between(aluguelCarro.getInicio(), aluguelCarro.getFim());
-        long hours = duration.toHours();
-        if (hours > 12){
+        long minutes = duration.toMinutes();
+        long hours = minutes / 60;
 
+        double basicPayment;
+        if (hours > 12){
+            basicPayment = pricePerDay * Math.ceil(hours / 24.0);
         } else {
-            aluguelCarro.setFatura(new Fatura(pricePerHour * hours, taxService.tax(pricePerHour * hours)));
+            basicPayment = pricePerHour * Math.ceil(hours);
         }
+
+        double tax = taxService.tax(basicPayment);
+
+        aluguelCarro.setFatura(new Fatura(basicPayment, tax));
     }
 
 }
