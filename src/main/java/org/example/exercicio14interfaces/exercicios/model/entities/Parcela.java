@@ -1,17 +1,32 @@
 package org.example.exercicio14interfaces.exercicios.model.entities;
 
+import java.time.LocalDate;
+
 public class Parcela {
-    private Long numeroParcela;
+    private Double valor;
+    private LocalDate dataVencimento;
 
-    public Parcela(Long numeroParcela) {
-        this.numeroParcela = numeroParcela;
+    public Parcela() {
     }
 
-    public Long getNumeroParcela() {
-        return numeroParcela;
+    public Parcela(Double valor, LocalDate dataVencimento) {
+        this.valor = valor;
+        this.dataVencimento = dataVencimento;
     }
 
-    public void setNumeroParcela(Long numeroParcela) {
-        this.numeroParcela = numeroParcela;
+    public Double getValor() {
+        return valor;
+    }
+
+    public void setValor(Double valor) {
+        this.valor = valor;
+    }
+
+    public LocalDate getDataVencimento() {
+        return dataVencimento;
+    }
+
+    public void setDataVencimento(LocalDate dataVencimento) {
+        this.dataVencimento = dataVencimento;
     }
 }

@@ -1,12 +1,13 @@
 package org.example.exercicio14interfaces.exercicios.model.entities;
 
 import java.time.LocalDate;
+import java.util.List;
 
 public class Contrato {
     private Long numeroContrato;
     private LocalDate dataContrato;
     private Double valorContrato;
-    private Parcela parcela;
+    private List<Parcela> parcelas;
 
     public Contrato(Long numeroContrato, LocalDate dataContrato, Double valorContrato) {
         this.numeroContrato = numeroContrato;
@@ -38,11 +39,11 @@ public class Contrato {
         this.valorContrato = valorContrato;
     }
 
-    public Parcela getParcela() {
-        return parcela;
+    public List<Parcela> getParcelas() {
+        return parcelas;
     }
 
-    public void setParcela(Parcela parcela) {
-        this.parcela = parcela;
+    public void setParcelas(List<Parcela> parcelas) {
+        this.parcelas = parcelas;
     }
 }
