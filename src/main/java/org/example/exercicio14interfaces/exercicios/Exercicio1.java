@@ -1,5 +1,11 @@
 package org.example.exercicio14interfaces.exercicios;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
+import java.util.Scanner;
+
 /**
  * Uma empresa deseja automatizar o processamento de seus contratos. O processamento de
  * um contrato consiste em gerar as parcelas a serem pagas para aquele contrato, com base no
@@ -37,4 +43,21 @@ package org.example.exercicio14interfaces.exercicios;
  *
  * */
 public class Exercicio1 {
+    public static void main(String[] args) {
+        Locale.setDefault(Locale.US);
+        Scanner scanner = new Scanner(System.in);
+        DateTimeFormatter formatoData = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        System.out.println("Entre os dados do contrato:");
+        System.out.print("Número: ");
+        int numero = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Data (dd/MM/yyyy): ");
+        LocalDate data = LocalDate.parse(scanner.nextLine(), formatoData);
+        System.out.print("Valor do contrato: ");
+        Double valor = scanner.nextDouble();
+        System.out.print("Entre com o numero de parcelas: ");
+        int numeroParcelas = scanner.nextInt();
+
+    }
 }
