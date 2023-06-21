@@ -43,11 +43,8 @@ public class Contrato {
         this.valorContrato = valorContrato;
     }
 
-    public void addParcelas(Parcela parcela) {
-        parcelas.add(parcela);
+    public List<Parcela> getParcelas() {
+        return parcelas;
     }
 
-    public void removeParcelas(Parcela parcela) {
-        this.parcelas.remove(parcela);
-    }
 }

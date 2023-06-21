@@ -1,5 +1,8 @@
 package org.example.exercicio14interfaces.exercicios;
 
+import org.example.exercicio14interfaces.exercicios.model.entities.Contrato;
+import org.example.exercicio14interfaces.exercicios.model.entities.Parcela;
+
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -55,7 +58,9 @@ public class Exercicio1 {
         System.out.print("Data (dd/MM/yyyy): ");
         LocalDate data = LocalDate.parse(scanner.nextLine(), formatoData);
         System.out.print("Valor do contrato: ");
-        Double valor = scanner.nextDouble();
+        double valor = scanner.nextDouble();
+        Contrato contrato = new Contrato(numero,data,valor);
+
         System.out.print("Entre com o numero de parcelas: ");
         int numeroParcelas = scanner.nextInt();
 
