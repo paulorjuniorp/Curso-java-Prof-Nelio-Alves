@@ -2,18 +2,12 @@ package org.example.exercicio14interfaces.exercicios.model.services;
 
 import org.example.exercicio14interfaces.exercicios.model.entities.Contrato;
 
-public class ContratoService implements PagamentoOnlineService {
-    public void processoContrato(Contrato contrato, Integer parcelas){
+public class ContratoService {
+    private PagamentoOnlineService pagamentoOnlineService;
 
+    public ContratoService(PagamentoOnlineService pagamentoOnlineService) {
+        this.pagamentoOnlineService = pagamentoOnlineService;
     }
 
-    @Override
-    public double taxaPagamento(double quantia) {
-        return 0;
-    }
-
-    @Override
-    public double interesse(double quantia, int meses) {
-        return 0;
-    }
+    public void processoContrato(Contrato contrato, Integer parcelas){}
 }
