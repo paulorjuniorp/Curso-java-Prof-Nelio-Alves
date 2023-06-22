@@ -2,6 +2,7 @@ package org.example.exercicio14interfaces.exercicios;
 
 import org.example.exercicio14interfaces.exercicios.model.entities.Contrato;
 import org.example.exercicio14interfaces.exercicios.model.entities.Parcela;
+import org.example.exercicio14interfaces.exercicios.model.services.ContratoService;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -64,5 +65,13 @@ public class Exercicio1 {
         System.out.print("Entre com o numero de parcelas: ");
         int numeroParcelas = scanner.nextInt();
 
+        ContratoService contratoService = new ContratoService(null);
+        contratoService.processoContrato(contrato, numeroParcelas);
+        System.out.println("PARCELAS: ");
+        for (Parcela parcela : contrato.getParcelas()) {
+            System.out.println(parcela);
+        }
+
+        scanner.close();
     }
 }
