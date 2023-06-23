@@ -10,6 +10,7 @@ public class Exemplo2 {
         AbstractShape shape1 = new Circle(Color.BLUE, 2.0);
         AbstractShape shape2 = new Rectangle(Color.RED, 5.0,2.0);
 
-
+        System.out.println("Circulo: " + shape1.getColor() + " - " + shape1.area());
+        System.out.println("Retângulo: " + shape2.getColor() + " - " + shape2.area());
     }
 }
