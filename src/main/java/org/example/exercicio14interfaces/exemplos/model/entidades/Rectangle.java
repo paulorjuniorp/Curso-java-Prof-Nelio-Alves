@@ -3,12 +3,18 @@ package org.example.exercicio14interfaces.exemplos.model.entidades;
 import org.example.exercicio11herancapolimorfismo.example.enums.Color;
 
 public class Rectangle extends AbstractShape {
-    public Rectangle(Color color) {
+
+    private Double altura;
+    private Double largura;
+
+    public Rectangle(Color color, Double altura, Double largura) {
         super(color);
+        this.altura = altura;
+        this.largura = largura;
     }
 
     @Override
     public double area() {
-        return 0;
+        return altura * largura;
     }
 }
