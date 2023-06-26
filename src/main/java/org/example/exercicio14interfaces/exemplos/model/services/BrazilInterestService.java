@@ -8,6 +8,10 @@ public class BrazilInterestService {
         this.taxaJuros = taxaJuros;
     }
 
+    public Double getTaxaJuros() {
+        return taxaJuros;
+    }
+
     public double payment(double amount, int months) {
         return 0;
     }
