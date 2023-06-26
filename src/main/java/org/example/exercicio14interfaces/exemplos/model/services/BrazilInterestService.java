@@ -1,18 +1,15 @@
 package org.example.exercicio14interfaces.exemplos.model.services;
 
-public class BrazilInterestService {
+public class BrazilInterestService implements InterestService {
 
-    private Double taxaJuros;
+    private Double interestRate;
 
-    public BrazilInterestService(Double taxaJuros) {
-        this.taxaJuros = taxaJuros;
+    public BrazilInterestService(Double interestRate) {
+        this.interestRate = interestRate;
     }
 
-    public Double getTaxaJuros() {
-        return taxaJuros;
-    }
-
-    public double payment(double amount, int months) {
-        return 0;
+    @Override
+    public double getInterestRate() {
+        return interestRate;
     }
 }

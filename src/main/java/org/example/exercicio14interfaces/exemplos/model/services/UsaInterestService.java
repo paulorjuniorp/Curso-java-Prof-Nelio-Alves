@@ -1,13 +1,13 @@
 package org.example.exercicio14interfaces.exemplos.model.services;
 
-public class UsaInterestService {
+public class UsaInterestService implements InterestService {
     private Double interestRate;
 
     public UsaInterestService(Double interestRate) {
         this.interestRate = interestRate;
     }
 
-    public Double getInterestRate() {
+    public double getInterestRate() {
         return interestRate;
     }
 }
