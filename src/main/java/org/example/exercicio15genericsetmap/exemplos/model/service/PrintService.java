@@ -16,6 +16,9 @@ public class PrintService {
         return list.get(0);
     }
     public void printValue(){
+        if (list.isEmpty()){
+            throw new IllegalStateException("List is empty");
+        }
         for (Integer integer : list) System.out.println(integer);
     }
 }
