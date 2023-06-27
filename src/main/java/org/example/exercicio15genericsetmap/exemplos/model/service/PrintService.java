@@ -5,11 +5,11 @@ import java.util.List;
 
 public class PrintService {
 
-    List<Integer> list = new ArrayList<>();
-    public void addValue(int value){
+    List<Object> list = new ArrayList<>();
+    public void addValue(Object value){
         list.add(value);
     }
-    public int first(){
+    public Object first(){
         if (list.isEmpty()){
             throw new IllegalStateException("List is empty");
         }
@@ -19,6 +19,6 @@ public class PrintService {
         if (list.isEmpty()){
             throw new IllegalStateException("List is empty");
         }
-        for (Integer integer : list) System.out.println(integer);
+        for (Object integer : list) System.out.println(integer);
     }
 }
