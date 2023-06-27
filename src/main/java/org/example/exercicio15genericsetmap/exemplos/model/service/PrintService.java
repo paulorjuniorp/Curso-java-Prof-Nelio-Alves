@@ -10,6 +10,9 @@ public class PrintService {
         list.add(value);
     }
     public int first(){
+        if (list.isEmpty()){
+            throw new IllegalStateException("List is empty");
+        }
         return list.get(0);
     }
     public void printValue(){
