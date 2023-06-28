@@ -27,9 +27,9 @@ public class Exemplo2 {
                 line = bufferedReader.readLine();
             }
 
-//            Integer x = CalculationService.max(list);
-//            System.out.println("Max: ");
-//            System.out.println(x);
+            Integer x = CalculationService.max(list);
+            System.out.println("Max: ");
+            System.out.println(x);
         } catch (IOException e){
             System.out.println("Error: " + e.getMessage());
         }
