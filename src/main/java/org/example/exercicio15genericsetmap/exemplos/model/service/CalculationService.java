@@ -1,6 +1,5 @@
 package org.example.exercicio15genericsetmap.exemplos.model.service;
 
-import java.util.Collections;
 import java.util.List;
 
 public class CalculationService<T> {
@@ -15,6 +14,6 @@ public class CalculationService<T> {
             }
         }
 
-        return Collections.max(list);
+        return max;
     }
 }
