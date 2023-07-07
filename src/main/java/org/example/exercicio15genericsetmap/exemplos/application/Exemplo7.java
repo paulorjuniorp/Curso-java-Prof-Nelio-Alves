@@ -25,9 +25,13 @@ public class Exemplo7 {
         set.add("Notebook");
         set.add("Tablet");
 
+        set.remove("Tablet");
+
         treeSet.add("TV");
         treeSet.add("Notebook");
         treeSet.add("Tablet");
+
+        treeSet.removeIf(t -> t.charAt(0) == 'T');
 
         System.out.println(set.contains("Notebook"));
         System.out.println(treeSet.contains("Notebook"));
