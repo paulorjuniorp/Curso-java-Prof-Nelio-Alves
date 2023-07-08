@@ -2,7 +2,7 @@ package org.example.exercicio15genericsetmap.exemplos.model.entities;
 
 import java.util.Objects;
 
-public class Produce {
+public class Produce implements Comparable<Produce> {
     private String name;
     private Double price;
 
@@ -38,5 +38,18 @@ public class Produce {
     @Override
     public int hashCode() {
         return Objects.hash(name, price);
+    }
+
+    @Override
+    public String toString() {
+        return "Produce{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                '}';
+    }
+
+    @Override
+    public int compareTo(Produce o) {
+        return name.toUpperCase().compareTo(o.getName());
     }
 }
