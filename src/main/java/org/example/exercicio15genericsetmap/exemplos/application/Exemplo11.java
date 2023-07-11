@@ -15,7 +15,7 @@ public class Exemplo11 {
 
         System.out.println("ALL COOKIES:");
         for (String key : cookies.keySet()) {
-            System.out.println(key);
+            System.out.println(key + ": " + cookies.get(key));
         }
 
     }
