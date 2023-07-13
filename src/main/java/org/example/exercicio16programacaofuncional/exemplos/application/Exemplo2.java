@@ -22,9 +22,7 @@ public class Exemplo2 {
             }
         };
 
-        Comparator<Product> lambdaComp = (p1, p2) -> {
-            return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
-        };
+        Comparator<Product> lambdaComp = (p1, p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
 
         list.sort(comp);
         list.sort(lambdaComp);
