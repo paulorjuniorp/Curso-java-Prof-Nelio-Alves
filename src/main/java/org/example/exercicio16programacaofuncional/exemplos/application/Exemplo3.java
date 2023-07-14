@@ -18,6 +18,7 @@ public class Exemplo3 {
         System.out.println(Arrays.toString(vect));
     }
 
+    // O comportamento dessa função não depende somente dela, por isso ela não possui transparência referencial
     public static void changeOddValues(int[] numbers){
         for (int i=0; i < numbers.length; i++){
             if (numbers[i] % 2 != 0){
