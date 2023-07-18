@@ -33,6 +33,9 @@ public class Product {
         return this.price >= 100;
     }
 
+    public static void staticProductConsumer(Product product){
+        product.setPrice(product.getPrice() * 1.1);
+    }
     @Override
     public String toString() {
         return "Product{" +
