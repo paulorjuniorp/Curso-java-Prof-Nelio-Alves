@@ -1,11 +1,9 @@
 package org.example.exercicio16programacaofuncional.exemplos.application;
 
 import org.example.exercicio16programacaofuncional.exemplos.model.entities.Product;
-import org.example.exercicio16programacaofuncional.exemplos.util.UpperCaseNameProductFunction;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 // Function utilizando lambda inline
 public class Exemplo18 {
