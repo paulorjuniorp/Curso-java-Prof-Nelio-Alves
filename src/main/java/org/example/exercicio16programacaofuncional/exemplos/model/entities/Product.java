@@ -44,6 +44,10 @@ public class Product {
     public static String staticProductFunction(Product product){
         return product.getName().toUpperCase();
     }
+
+    public String nonStaticProductFunction(){
+        return this.getName().toUpperCase();
+    }
     @Override
     public String toString() {
         return "Product{" +
