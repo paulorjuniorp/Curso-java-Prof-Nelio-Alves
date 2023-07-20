@@ -18,5 +18,9 @@ public class Exemplo20 {
         Stream<String> stringStream = Stream.of("Maria","Alex","Bob");
 
         System.out.println(Arrays.toString(stringStream.toArray()));
+
+        Stream<Integer> integerStream = Stream.iterate(0, x -> x + 2).limit(20);
+
+        System.out.println(Arrays.toString(integerStream.toArray()));
     }
 }
