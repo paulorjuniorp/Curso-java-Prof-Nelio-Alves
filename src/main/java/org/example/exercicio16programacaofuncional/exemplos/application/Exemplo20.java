@@ -14,5 +14,9 @@ public class Exemplo20 {
         Stream<Integer> inteiros = list.stream().map(x -> x * 10);
 
         System.out.println(Arrays.toString(inteiros.toArray()));
+
+        Stream<String> stringStream = Stream.of("Maria","Alex","Bob");
+
+        System.out.println(Arrays.toString(stringStream.toArray()));
     }
 }
