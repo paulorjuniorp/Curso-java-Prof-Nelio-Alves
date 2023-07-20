@@ -22,5 +22,9 @@ public class Exemplo20 {
         Stream<Integer> integerStream = Stream.iterate(0, x -> x + 2).limit(20);
 
         System.out.println(Arrays.toString(integerStream.toArray()));
+
+        Stream<Long> fibonacci = Stream.iterate(new Long[]{0L,1L}, p -> new Long[]{p[1], p[0] + p[1]}).map(p -> p[0]);
+
+        System.out.println(Arrays.toString(fibonacci.limit(10).toArray()));
     }
 }
