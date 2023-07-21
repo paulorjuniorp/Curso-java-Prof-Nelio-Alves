@@ -37,6 +37,8 @@ public class Exercicio1 {
                     .map(produto -> produto.getPreco())
                     .reduce(0.0, Double::sum) / lista.size();
 
+            System.out.println("Média dos produtos: " + media);
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
