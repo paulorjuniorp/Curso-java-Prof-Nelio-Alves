@@ -2,6 +2,7 @@ package org.example.exercicio16programacaofuncional.exemplos.application;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -26,5 +27,12 @@ public class Exemplo20 {
         Stream<Long> fibonacci = Stream.iterate(new Long[]{0L,1L}, p -> new Long[]{p[1], p[0] + p[1]}).map(p -> p[0]);
 
         System.out.println(Arrays.toString(fibonacci.limit(10).toArray()));
+
+        List<Integer> integers = list.stream()
+                .filter(x -> x % 2 == 0)
+                .map(x -> x * 10)
+                .toList();
+
+        System.out.println(Arrays.toString(integers.toArray()));
     }
 }
