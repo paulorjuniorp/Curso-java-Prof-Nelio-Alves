@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public class Produto {
     private String nome;
-    private String preco;
+    private Double preco;
 
-    public Produto(String nome, String preco) {
+    public Produto(String nome, Double preco) {
         this.nome = nome;
         this.preco = preco;
     }
@@ -19,11 +19,11 @@ public class Produto {
         this.nome = nome;
     }
 
-    public String getPreco() {
+    public Double getPreco() {
         return preco;
     }
 
-    public void setPreco(String preco) {
+    public void setPreco(Double preco) {
         this.preco = preco;
     }
 
@@ -44,7 +44,7 @@ public class Produto {
     public String toString() {
         return "Produto{" +
                 "nome='" + nome + '\'' +
-                ", preco='" + preco + '\'' +
+                ", preco=" + preco +
                 '}';
     }
 }
