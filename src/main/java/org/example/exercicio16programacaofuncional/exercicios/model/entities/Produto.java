@@ -1,0 +1,50 @@
+package org.example.exercicio16programacaofuncional.exercicios.model.entities;
+
+import java.util.Objects;
+
+public class Produto {
+    private String nome;
+    private String preco;
+
+    public Produto(String nome, String preco) {
+        this.nome = nome;
+        this.preco = preco;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getPreco() {
+        return preco;
+    }
+
+    public void setPreco(String preco) {
+        this.preco = preco;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Produto produto = (Produto) o;
+        return Objects.equals(nome, produto.nome) && Objects.equals(preco, produto.preco);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome, preco);
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "nome='" + nome + '\'' +
+                ", preco='" + preco + '\'' +
+                '}';
+    }
+}
