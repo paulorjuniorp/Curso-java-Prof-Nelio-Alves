@@ -33,6 +33,9 @@ public class Exercicio1 {
                 line = bufferedReader.readLine();
             }
 
+            double media = lista.stream()
+                    .map(produto -> produto.getPreco())
+                    .reduce(0.0, Double::sum) / lista.size();
 
         } catch (IOException e) {
             throw new RuntimeException(e);
