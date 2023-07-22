@@ -7,8 +7,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 /**
  * Fazer um programa para ler um conjunto de produtos a partir de um arquivo em formato .csv
@@ -39,7 +41,14 @@ public class Exercicio1 {
 
             System.out.println("Média de preço dos produtos: " + media);
 
-            
+            Comparator<String> comparator = (s1, s2) -> s1.toUpperCase().compareTo(s2.toUpperCase());
+
+            List<String> collect = lista.stream()
+                    .filter(produto -> produto.getPreco() < media)
+                    .map(produto -> produto.getNome())
+                    .sorted(comparator.reversed())
+                    .toList();
+            collect.forEach(System.out::println);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
