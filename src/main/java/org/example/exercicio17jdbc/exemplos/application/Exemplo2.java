@@ -18,15 +18,24 @@ public class Exemplo2 {
                 "INSERT INTO seller "
                     +"(Name, Email, BirthDate, BaseSalary, DepartmentId) "
                     +"VALUES "
-                    +"(?,?,?,?,?)");
+                    +"(?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
 
-            statement.setString(1,"Joe Mango");
-            statement.setString(2,"joaodamanga@email.com");
-            statement.setDate(3,new Date(formatoData.parse("23/07/1965").getTime()));
-            statement.setDouble(4, 3000.0);
-            statement.setInt(5, 4);
+            statement.setString(1,"Tantan Brown");
+            statement.setString(2,"tbrown@email.com");
+            statement.setDate(3,new Date(formatoData.parse("17/11/1957").getTime()));
+            statement.setDouble(4, 6700.0);
+            statement.setInt(5, 2);
 
             int rowsAffected = statement.executeUpdate();
+            if (rowsAffected > 0){
+                ResultSet resultSet = statement.getGeneratedKeys();
+                while (resultSet.next()){
+                    int id = resultSet.getInt(1);
+                    System.out.println("Done! Id = " + id);
+                }
+            } else {
+                System.out.println("No rows affected!!");
+            }
             System.out.println(rowsAffected);
         } catch (SQLException | ParseException e) {
             throw new DbException(e.getMessage());
