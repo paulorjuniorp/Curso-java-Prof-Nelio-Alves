@@ -27,6 +27,10 @@ public class Exemplo1 {
 
         } catch (SQLException e){
             throw new DbException(e.getMessage());
+        } finally {
+            DB.closeResultSet(resultSet);
+            DB.closeStatement(statement);
+            DB.closeConnection();
         }
     }
 }
