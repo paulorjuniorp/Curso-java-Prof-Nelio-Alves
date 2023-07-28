@@ -33,10 +33,10 @@ public class Exemplo5 {
         } catch (SQLException e) {
             try {
                 connection.rollback();
+                throw new DbException("Transaction rolled back! Caused by: " + e.getMessage());
             } catch (SQLException ex) {
-                throw new DbException(ex.getMessage());
+                throw new DbException("Error trying rollback! Caused by: " + ex.getMessage());
             }
-            throw new DbException(e.getMessage());
         } finally {
             DB.closeStatement(statement);
             DB.closeConnection();
