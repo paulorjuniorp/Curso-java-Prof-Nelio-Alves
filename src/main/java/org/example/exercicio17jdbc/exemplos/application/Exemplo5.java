@@ -14,8 +14,9 @@ public class Exemplo5 {
         Statement statement = null;
 
         try{
-            connection.setAutoCommit(false);
             connection = DB.getConnection();
+            connection.setAutoCommit(false);
+
             statement = connection.createStatement();
 
             int linha1 = statement.executeUpdate("UPDATE seller SET BaseSalary = 2090 WHERE DepartmentId = 1");
